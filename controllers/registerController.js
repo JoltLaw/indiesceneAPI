@@ -26,8 +26,7 @@ const newAccountHandler = async (req, res) => {
       password: hashedPass,
     });
 
-    logIn();
-    res.status(201).json({ success: `New user created!` });
+    logIn(req, res);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
